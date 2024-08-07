@@ -1,0 +1,12 @@
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+.column {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.column h2 {
+    text-align: center;
+}
