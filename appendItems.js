@@ -1,3 +1,5 @@
+
+//create main class
 export class ToDoItem {
     constructor(title, description, dueDate, priority, notes = '', checklist = []) {
         this.title = title;
@@ -59,11 +61,28 @@ export function createAndAppendColumns() {
     const homeTitle = document.createElement('h2');
     homeTitle.textContent = 'Home';
     homeColumn.appendChild(homeTitle);
-// Function to create the "Add" button and set up the event listener
+
+    // Create work column
+    const workColumn = document.createElement('div');
+    workColumn.id = 'work-column';
+    workColumn.className = 'column';
+    const workTitle = document.createElement('h2');
+    workTitle.textContent = 'Work';
+    workColumn.appendChild(workTitle);
+
+    // Append columns to the container
+    const container = document.getElementById('container');
+    container.appendChild(homeColumn);
+    container.appendChild(workColumn);
+}
+
+// Function to initialize columns and add buttons
 export function initializeColumns() {
+    createAndAppendColumns();
     createAddButton('home-column');
     createAddButton('work-column');
 }
+
 
 // Function to create an "Add" button and set up event listener
 function createAddButton(containerId) {
@@ -110,4 +129,4 @@ function showToDoForm(containerId) {
 
     const container = document.getElementById(containerId);
     container.appendChild(formContainer);
-}
+}}
