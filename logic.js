@@ -1,5 +1,5 @@
-import { createAndAppendColumns } from './appendItems.js';
+import { initializeColumns } from './appendItems.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    createAndAppendColumns();
+    initializeColumns();
 });

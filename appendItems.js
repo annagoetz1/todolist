@@ -91,6 +91,7 @@ function createAddButton(containerId) {
     addButton.textContent = 'Add To-Do';
     addButton.addEventListener('click', () => showToDoForm(containerId));
     container.appendChild(addButton);
+    console.log('Button added to ' + containerId);
 }
 
 // Function to show the form for adding a new to-do item
@@ -129,4 +130,4 @@ function showToDoForm(containerId) {
 
     const container = document.getElementById(containerId);
     container.appendChild(formContainer);
-}}
+}
