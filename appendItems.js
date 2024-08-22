@@ -37,6 +37,7 @@ export class ToDoItem {
         itemElement.appendChild(descriptionElement);
         itemElement.appendChild(dueDateElement);
         itemElement.appendChild(priorityElement);
+        itemElement.appendChild(deleteButton);    
 
         return itemElement;
     }
