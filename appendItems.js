@@ -26,6 +26,13 @@ export class ToDoItem {
         const priorityElement = document.createElement('p');
         priorityElement.textContent = `Priority: ${this.priority}`;
 
+           // Create delete button
+           const deleteButton = document.createElement('button');
+           deleteButton.textContent = 'Delete';
+           deleteButton.addEventListener('click', () => {
+               itemElement.remove();
+           });
+
         itemElement.appendChild(titleElement);
         itemElement.appendChild(descriptionElement);
         itemElement.appendChild(dueDateElement);
