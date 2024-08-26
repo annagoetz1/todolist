@@ -14,6 +14,13 @@ export class ToDoItem {
         const itemElement = document.createElement('div');
         itemElement.className = 'todo-item';
 
+        const checkboxElement = document.createElement('input');
+        checkboxElement.type = 'checkbox';
+        checkboxElement.className = 'todo-checkbox';
+        checkboxElement.addEventListener('change', () => {
+            itemElement.classList.toggle('completed', checkboxElement.checked);
+        });
+
         const titleElement = document.createElement('h3');
         titleElement.textContent = this.title;
 
@@ -33,6 +40,7 @@ export class ToDoItem {
                itemElement.remove();
            });
 
+itemElement.appendChild(checkboxElement);
         itemElement.appendChild(titleElement);
         itemElement.appendChild(descriptionElement);
         itemElement.appendChild(dueDateElement);
