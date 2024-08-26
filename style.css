@@ -10,3 +10,8 @@
 .column h2 {
     text-align: center;
 }
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
