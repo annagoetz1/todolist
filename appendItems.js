@@ -58,6 +58,7 @@ export class ToDoItem {
 itemElement.appendChild(checkboxElement);
         itemElement.appendChild(titleElement);
         itemElement.appendChild(descriptionElement);
+        itemElement.appendChild(toggleButton);
         itemElement.appendChild(dueDateElement);
         itemElement.appendChild(priorityElement);
         itemElement.appendChild(deleteButton);   
