@@ -8,6 +8,7 @@ export class ToDoItem {
         this.priority = priority;
         this.notes = notes;
         this.checklist = checklist;
+        this.expanded = false;
     }
 
     createElement() {
@@ -24,6 +25,11 @@ export class ToDoItem {
         const titleElement = document.createElement('h3');
         titleElement.textContent = this.title;
 
+          // Create container for details
+          const detailsElement = document.createElement('div');
+          detailsElement.className = 'todo-details';
+          detailsElement.style.display = 'none'; 
+
         const descriptionElement = document.createElement('p');
         descriptionElement.textContent = `Description: ${this.description}`;
 
@@ -32,6 +38,15 @@ export class ToDoItem {
 
         const priorityElement = document.createElement('p');
         priorityElement.textContent = `Priority: ${this.priority}`;
+
+          // Create expand/collapse button
+          const toggleButton = document.createElement('button');
+          toggleButton.textContent = 'Expand';
+          toggleButton.addEventListener('click', () => {
+              this.expanded = !this.expanded;
+              detailsElement.style.display = this.expanded ? 'block' : 'none';
+              toggleButton.textContent = this.expanded ? 'Collapse' : 'Expand';
+          });
 
            // Create delete button
            const deleteButton = document.createElement('button');
@@ -45,7 +60,8 @@ itemElement.appendChild(checkboxElement);
         itemElement.appendChild(descriptionElement);
         itemElement.appendChild(dueDateElement);
         itemElement.appendChild(priorityElement);
-        itemElement.appendChild(deleteButton);    
+        itemElement.appendChild(deleteButton);   
+        itemElement.appendChild(detailsElement); 
 
         return itemElement;
     }
